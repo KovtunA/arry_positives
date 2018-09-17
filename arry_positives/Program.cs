@@ -7,15 +7,23 @@ namespace arry_positives
         static void Main(string[] args)
         {
             int[] arr = new int[10];
-            Console.WriteLine("Random array:\n");
+            fillArrayWithRandomNumbers(arr);
 
-            int postives = 0;
+            Console.WriteLine("Random array:\n");
+            printArray(arr);
+
+            int positives = 0;
             foreach (int number in arr)
             {
-                if (number > 0) { postives++; }
+                if (number > 0) { positives++; }
             }
 
-            Console.WriteLine($"The amount of positive number: {postives}");
+            Console.WriteLine($"The amount of positive number: {positives}");
+        }
+
+        static void printArray(int[] massive)
+        {
+            foreach (int value in massive) { Console.WriteLine(value); }
         }
 
         static void fillArrayWithRandomNumbers(int[] arr) {
@@ -24,7 +32,6 @@ namespace arry_positives
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = rand.Next(1000) - 500;
-                Console.WriteLine(arr[i]);
             }
         }
     }
